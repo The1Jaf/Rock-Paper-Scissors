@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device.widht, inital scale=1.0">
+	<title>Rock-Paper-Scissors by Ahmed</title>
+</head>
+<body>
+	<script>
+		function game() {
+			//random number/selection from computer
+			function computerPlay() {
+				let computerSelection =Math.floor(Math.random() *3)+1
+				if (computerSelection==1) {
+					return "Rock";
+				} else if (computerSelection==2) {
+					return "Paper";
+				} else {
+					return "Scissors";
+				}
+			}
+			//player's choice
+			function playerSelection() {
+					let playerSelection = prompt('Rock, Paper or Scissors?')
+					return playerSelection
+			}
+
+			function playRound () {
+				switch (playerSelection) {
+					case "rock":
+						if (playerSelection==computerSelection) {
+							return "Draw"
+						} else if (computerSelection == "paper") {
+							return "You lose! Paper beats Rock."
+						} else {
+							return "You win! Rock beats Scissors."
+						}
+						break;
+					case "paper":
+						if (playerSelection == computerSelection) {
+							return "Draw"
+						} else if (computerSelection == "rock") {
+							return "You win! Paper beats Rock."
+						} else {
+							return "You lose! Scissors beats Paper."
+						}
+						break;
+					case "scissors":
+						if (playerSelection == computerSelection) {
+							return "Draw"
+						} else if(computerSelection == "rock") {
+							return " You lose! Rock beats Scissors."
+						} else {
+							return "You win! Scissors beats Paper."
+						}
+						break;
+						default:
+						return "Something's wrong, I can feel it."
+
+			}
+		}
+	</script>
+</body>
+</html>
