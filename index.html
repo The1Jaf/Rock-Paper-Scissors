@@ -7,57 +7,31 @@
 </head>
 <body>
 	<script>
-		function game() {
-			//random number/selection from computer
-			function computerPlay() {
-				let computerSelection =Math.floor(Math.random() *3)+1
-				if (computerSelection==1) {
-					return "Rock";
-				} else if (computerSelection==2) {
-					return "Paper";
-				} else {
-					return "Scissors";
-				}
+		function computerPlay() {
+			x = Math.floor(Math.random()*3)+1
+			if (x==1) {
+				return "rock"
+			} else if(x==2) {
+				return "paper"
+			} else {
+				return "scissors"
 			}
-			//player's choice
-			function playerSelection() {
-					let playerSelection = prompt('Rock, Paper or Scissors?')
-					return playerSelection
-			}
-
-			function playRound () {
-				switch (playerSelection) {
-					case "rock":
-						if (playerSelection==computerSelection) {
-							return "Draw"
-						} else if (computerSelection == "paper") {
-							return "You lose! Paper beats Rock."
-						} else {
-							return "You win! Rock beats Scissors."
-						}
-						break;
-					case "paper":
-						if (playerSelection == computerSelection) {
-							return "Draw"
-						} else if (computerSelection == "rock") {
-							return "You win! Paper beats Rock."
-						} else {
-							return "You lose! Scissors beats Paper."
-						}
-						break;
-					case "scissors":
-						if (playerSelection == computerSelection) {
-							return "Draw"
-						} else if(computerSelection == "rock") {
-							return " You lose! Rock beats Scissors."
-						} else {
-							return "You win! Scissors beats Paper."
-						}
-						break;
-						default:
-						return "Something's wrong, I can feel it."
-
-			}
+		}
+		function playRound(playerSelection, computerSelection)
+		if (playerSelection == computerSelection) {
+			return "Draw"
+		} else if (computerSelection == "rock" && playerSelection == "paper") {
+			return "You've won! Paper beats Rock."
+		} else if (computerSelection == "rock" && playerSelection == "scissors") {
+			return "You've lost. Rock beats Scissors."
+		} else if (computerSelection == "paper" && playerSelection == "rock") {
+			return "You've lost. Paper beats Rock."
+		} else if (computerSelection == "paper" && playerSelection == "scissors") {
+			return "You've won! Scissors beats paper."
+		} else if (computerSelection == "scissors" && playerSelection == "rock") {
+			return "You've won. Rock beats Scissors"
+		} else if (computerSelection == "scissors" && playerSelection == "paper") {
+			return "You've lost. Scissors beats Paper."
 		}
 	</script>
 </body>
