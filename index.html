@@ -3,36 +3,53 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device.widht, inital scale=1.0">
-	<title>Rock-Paper-Scissors by Ahmed</title>
+	<title>Rock-Paper-Scissors</title>
 </head>
 <body>
 	<script>
-		function computerPlay() {
-			x = Math.floor(Math.random()*3)+1
-			if (x==1) {
-				return "rock"
-			} else if(x==2) {
-				return "paper"
-			} else {
-				return "scissors"
+			//random choice from computer
+			function computerPlay() {
+				x = Math.floor(Math.random()*3)+1
+				if (x==1) {
+					return "rock"
+				} else if(x==2) {
+					return "paper"
+				} else {
+					return "scissors"
+				}
 			}
-		}
-		function playRound(playerSelection, computerSelection)
-		if (playerSelection == computerSelection) {
-			return "Draw"
-		} else if (computerSelection == "rock" && playerSelection == "paper") {
-			return "You've won! Paper beats Rock."
-		} else if (computerSelection == "rock" && playerSelection == "scissors") {
-			return "You've lost. Rock beats Scissors."
-		} else if (computerSelection == "paper" && playerSelection == "rock") {
-			return "You've lost. Paper beats Rock."
-		} else if (computerSelection == "paper" && playerSelection == "scissors") {
-			return "You've won! Scissors beats paper."
-		} else if (computerSelection == "scissors" && playerSelection == "rock") {
-			return "You've won. Rock beats Scissors"
-		} else if (computerSelection == "scissors" && playerSelection == "paper") {
-			return "You've lost. Scissors beats Paper."
-		}
+			//prompting choice from user
+			function playerSelection() {
+				let playerChoice = prompt('Rock, Paper, or Scissors?')
+				return playerChoice
+			}
+			//play-function
+			function playRound(playerChoice, computerSelection) {
+				if (playerChoice == computerSelection) {
+					return "Draw"
+				} else if (computerSelection == "rock" && playerChoice == "paper") {
+					return "You've won! Paper beats Rock."
+				} else if (computerSelection == "rock" && playerChoice == "scissors") {
+					return "You've lost. Rock beats Scissors."
+				} else if (computerSelection == "paper" && playerChoice == "rock") {
+					return "You've lost. Paper beats Rock."
+				} else if (computerSelection == "paper" && playerChoice == "scissors") {
+					return "You've won! Scissors beats paper."
+				} else if (computerSelection == "scissors" && playerChoice == "rock") {
+					return "You've won. Rock beats Scissors"
+				} else if (computerSelection == "scissors" && playerChoice == "paper") {
+					return "You've lost. Scissors beats Paper."
+				}
+      				}    		
+  				function game() {
+	      		let playerChoice = playerSelection()
+				const computerSelection = computerPlay()
+				console.log(playRound(playerChoice, computerSelection)) }
+			game()
+			game()
+			game()
+			game()
+			game()
 	</script>
 </body>
 </html>
